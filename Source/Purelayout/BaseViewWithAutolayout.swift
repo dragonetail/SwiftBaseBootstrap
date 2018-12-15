@@ -8,8 +8,8 @@
 
 import UIKit
 
-class BaseViewWithAutolayout: UIView {
-    override init(frame: CGRect) {
+open class BaseViewWithAutolayout: UIView {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         _ = self.autoLayout("BaseView")
 
@@ -19,16 +19,16 @@ class BaseViewWithAutolayout: UIView {
         self.setNeedsUpdateConstraints()
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // Should overritted by subclass, setup view and compose subviews
-    func setupAndComposeView() {
+    open func setupAndComposeView() {
     }
 
     fileprivate var didSetupConstraints = false
-    override func updateConstraints() {
+    open override func updateConstraints() {
         if (!didSetupConstraints) {
             didSetupConstraints = true
             setupConstraints()
@@ -39,10 +39,10 @@ class BaseViewWithAutolayout: UIView {
     }
 
     // invoked only once
-    func setupConstraints() {
+    open func setupConstraints() {
     }
-    
-    func modifyConstraints() {
+
+    open func modifyConstraints() {
     }
 }
 

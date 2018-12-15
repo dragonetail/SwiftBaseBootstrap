@@ -8,9 +8,9 @@
 
 import UIKit
 
-class BaseViewControllerWithAutolayout: UIViewController {
+open class BaseViewControllerWithAutolayout: UIViewController {
     #if DEBUG
-        override func loadView() {
+    open override func loadView() {
             print("\(self.title ?? "") loadView~~~")
             super.loadView()
             _ = self.view.autoresizingMask(accessibilityIdentifier)
@@ -23,48 +23,48 @@ class BaseViewControllerWithAutolayout: UIViewController {
             print("\(self.title ?? "") loadView...")
         }
 
-        override func viewDidLoad() {
+        open override func viewDidLoad() {
             print("\(self.title ?? "") viewDidLoad~~~")
             super.viewDidLoad()
             print("\(self.title ?? "") viewDidLoad...")
         }
 
-        override func viewWillAppear(_ animated: Bool) {
+        open override func viewWillAppear(_ animated: Bool) {
             print("\(self.title ?? "") viewWillAppear(\(animated))~~~")
             super.viewWillAppear(animated)
 
             print("\(self.title ?? "") viewWillAppear(\(animated))...")
         }
 
-        override func viewDidAppear(_ animated: Bool) {
+        open override func viewDidAppear(_ animated: Bool) {
             print("\(self.title ?? "") viewDidAppear(\(animated))~~~")
             super.viewDidAppear(animated)
 
             print("\(self.title ?? "") viewDidAppear(\(animated))...")
         }
 
-        override func viewWillDisappear(_ animated: Bool) {
+        open override func viewWillDisappear(_ animated: Bool) {
             print("\(self.title ?? "") viewWillDisappear(\(animated))~~~")
             super.viewWillDisappear(animated)
 
             print("\(self.title ?? "") viewWillDisappear(\(animated))...")
         }
 
-        override func viewDidDisappear(_ animated: Bool) {
+        open override func viewDidDisappear(_ animated: Bool) {
             print("\(self.title ?? "") viewDidDisappear(\(animated))~~~")
             super.viewDidDisappear(animated)
 
             print("\(self.title ?? "") viewDidDisappear(\(animated))...")
         }
 
-        override func viewWillLayoutSubviews() {
+        open override func viewWillLayoutSubviews() {
             print("\(self.title ?? "") viewWillLayoutSubviews~~~")
             super.viewWillLayoutSubviews()
 
             print("\(self.title ?? "") viewWillLayoutSubviews...")
         }
 
-        override func viewDidLayoutSubviews() {
+        open override func viewDidLayoutSubviews() {
             print("\(self.title ?? "") viewDidLayoutSubviews~~~")
             super.viewDidLayoutSubviews()
 
@@ -72,11 +72,11 @@ class BaseViewControllerWithAutolayout: UIViewController {
             //self.view.autoPrintConstraints()
             //print("...")
             //self.view.superview?.autoPrintConstraints()
-            
+
             print("\(self.title ?? "") viewDidLayoutSubviews...")
         }
 
-        override func updateViewConstraints() {
+        open override func updateViewConstraints() {
             print("\(self.title ?? "") updateViewConstraints~~~")
             if (!didSetupConstraints) {
                 didSetupConstraints = true
@@ -91,7 +91,7 @@ class BaseViewControllerWithAutolayout: UIViewController {
         }
 
     #else
-        override func loadView() {
+        open override func loadView() {
             super.loadView()
             _ = self.view.autoresizingMask(accessibilityIdentifier)
 
@@ -101,7 +101,7 @@ class BaseViewControllerWithAutolayout: UIViewController {
             view.setNeedsUpdateConstraints()
         }
 
-        override func updateViewConstraints() {
+        open override func updateViewConstraints() {
             if (!didSetupConstraints) {
                 didSetupConstraints = true
                 setupConstraints()
@@ -111,17 +111,17 @@ class BaseViewControllerWithAutolayout: UIViewController {
             super.updateViewConstraints()
         }
     #endif
-    var accessibilityIdentifier: String {
+    open var accessibilityIdentifier: String {
         return "VC"
     }
 
-    func setupAndComposeView() {
+    open func setupAndComposeView() {
     }
 
     fileprivate var didSetupConstraints = false
-    func setupConstraints() {
+    open func setupConstraints() {
     }
-    func modifyConstraints() {
+    open func modifyConstraints() {
     }
 }
 
