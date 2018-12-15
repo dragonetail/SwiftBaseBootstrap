@@ -9,11 +9,23 @@ then
 	exit -1
 fi
 
-PREVersion=${PREVersion//\./\\\.}
-TARGETVersion=${TARGETVersion//\./\\\.}
+echo PREVersion=${PREVersion}
+echo TARGETVersion=${TARGETVersion}
 
-sed -i '' "s/${PREVersion}/${TARGETVersion}/g" ${PODSPEC}
+sed -i '' "s/${PREVersion//\./\\\.}/${TARGETVersion//\./\\\.}/g" ${PODSPEC}
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Add, commit and push ..."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
 git add -A && git commit -m "Release ${TARGETVersion}" . && git push
-git tag -f "${TARGETVersion}" && git push -f --tags
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Tag, and push to ${TARGETVersion} ..."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
+git tag "${TARGETVersion}" && git push --tags
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "Publish to pod ..."
+echo "~~~~~~~~~~~~~~~~~~~~~~~~"
 pod trunk push ${PODSPEC}
 
