@@ -1,15 +1,22 @@
 # SwiftBaseBootstrap
 
-[![CI Status](https://img.shields.io/travis/dragonetail/SwiftBaseBootstrap.svg?style=flat)](https://travis-ci.org/dragonetail/SwiftBaseBootstrap)
 [![Version](https://img.shields.io/cocoapods/v/SwiftBaseBootstrap.svg?style=flat)](https://cocoapods.org/pods/SwiftBaseBootstrap)
-[![License](https://img.shields.io/cocoapods/l/SwiftBaseBootstrap.svg?style=flat)](https://cocoapods.org/pods/SwiftBaseBootstrap)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftBaseBootstrap.svg?style=flat)](https://cocoapods.org/pods/SwiftBaseBootstrap)
+[![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org/)
+[![Swift Version](https://img.shields.io/badge/iOS-9.3-green.svg)](https://www.apple.com/ios/ios-9/)
+[![License](https://img.shields.io/cocoapods/l/SwiftBaseBootstrap.svg?style=flat)](https://cocoapods.org/pods/SwiftBaseBootstrap)
+
+A swift base bootstrap framework for some useful extentions.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+- Swift 4.2
+- iOS 9.0+
+- Xcode 10.1
 
 ## Installation
 

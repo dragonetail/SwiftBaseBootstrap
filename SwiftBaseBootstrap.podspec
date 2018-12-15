@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftBaseBootstrap'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of SwiftBaseBootstrap.'
+  s.summary          = 'Swift Base Bootstrap Framework.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+A swift base bootstrap framework for some useful extentions.
                        DESC
 
   s.homepage         = 'https://github.com/dragonetail/SwiftBaseBootstrap'
@@ -28,15 +28,16 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/dragonetail/SwiftBaseBootstrap.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
+  s.swift_version = '4.2'
 
-  s.source_files = 'SwiftBaseBootstrap/Classes/**/*'
-  
+  s.source_files = 'Source/**/*'
+
   # s.resource_bundles = {
-  #   'SwiftBaseBootstrap' => ['SwiftBaseBootstrap/Assets/*.png']
+  #   'SwiftPagingTabView' => ['SwiftPagingTabView/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'PureLayout', '~> 3.1.4'
 end
