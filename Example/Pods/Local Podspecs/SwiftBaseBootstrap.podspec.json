@@ -1,6 +1,6 @@
 {
   "name": "SwiftBaseBootstrap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Swift Base Bootstrap Framework.",
   "description": "A swift base bootstrap framework for some useful extentions.",
   "homepage": "https://github.com/dragonetail/SwiftBaseBootstrap",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/dragonetail/SwiftBaseBootstrap.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
     "ios": "9.3"

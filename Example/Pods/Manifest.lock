@@ -1,6 +1,6 @@
 PODS:
   - PureLayout (3.1.4)
-  - SwiftBaseBootstrap (0.1.0):
+  - SwiftBaseBootstrap (0.1.1):
     - PureLayout (~> 3.1.4)
 
 DEPENDENCIES:
@@ -16,7 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
-  SwiftBaseBootstrap: a95bb532dcf1cebd35d6bd2db596d6e6c6b549f3
+  SwiftBaseBootstrap: c3b7fd0491712e11c53792a9c9d7137074f8b140
 
 PODFILE CHECKSUM: 0337daef31a3a680a532f1d0bdb232bc60c059b4
 
