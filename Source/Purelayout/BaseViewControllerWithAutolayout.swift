@@ -93,7 +93,7 @@ class BaseViewControllerWithAutolayout: UIViewController {
     #else
         override func loadView() {
             super.loadView()
-            _ = self.view.configureForAutoresizingMask(accessibilityIdentifier)
+            _ = self.view.autoresizingMask(accessibilityIdentifier)
 
             setupAndComposeView()
 
