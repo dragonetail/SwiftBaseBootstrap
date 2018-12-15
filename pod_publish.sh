@@ -14,6 +14,6 @@ TARGETVersion=${TARGETVersion//\./\\\.}
 
 sed -i '' "s/${PREVersion}/${TARGETVersion}/g" ${PODSPEC}
 git add -A && git commit -m "Release ${TARGETVersion}" . && git push
-git tag -f '${TARGETVersion}' && git push -f --tags
+git tag -f "${TARGETVersion}" && git push -f --tags
 pod trunk push ${PODSPEC}
 
