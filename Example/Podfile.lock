@@ -1,0 +1,23 @@
+PODS:
+  - PureLayout (3.1.4)
+  - SwiftBaseBootstrap (0.1.0):
+    - PureLayout (~> 3.1.4)
+
+DEPENDENCIES:
+  - SwiftBaseBootstrap (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PureLayout
+
+EXTERNAL SOURCES:
+  SwiftBaseBootstrap:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PureLayout: f08c01b8dec00bb14a1fefa3de4c7d9c265df85e
+  SwiftBaseBootstrap: a95bb532dcf1cebd35d6bd2db596d6e6c6b549f3
+
+PODFILE CHECKSUM: 0337daef31a3a680a532f1d0bdb232bc60c059b4
+
+COCOAPODS: 1.5.3

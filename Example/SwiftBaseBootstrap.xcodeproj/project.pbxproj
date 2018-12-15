@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		032E2E5C4EFDDF78F528BF1B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1B5C523FDD759190633CB3D0 /* Pods-SwiftBaseBootstrap_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftBaseBootstrap_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftBaseBootstrap_Example/Pods-SwiftBaseBootstrap_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		376EA44370D74F79DECFE399 /* SwiftBaseBootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftBaseBootstrap.podspec; path = ../SwiftBaseBootstrap.podspec; sourceTree = "<group>"; };
+		376EA44370D74F79DECFE399 /* SwiftBaseBootstrap.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SwiftBaseBootstrap.podspec; path = ../SwiftBaseBootstrap.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		422CE0DE8049048074F6D285 /* Pods_SwiftBaseBootstrap_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftBaseBootstrap_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* SwiftBaseBootstrap_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftBaseBootstrap_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
