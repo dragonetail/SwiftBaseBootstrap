@@ -18,11 +18,9 @@ public extension UIView {
     }
 
     public func autoPrintConstraints() {
-        #if DEBUG
-            self.constraints.forEach { (constraint) in
-                print(String(describing: constraint))
-            }
-        #endif
+        self.constraints.forEach { (constraint) in
+            print(String(describing: constraint))
+        }
     }
 
     public func autoRoundBorder(_ color: UIColor = UIColor.purple) {

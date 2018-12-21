@@ -9,116 +9,130 @@
 import UIKit
 
 open class BaseViewControllerWithAutolayout: UIViewController {
-    #if DEBUG
+    open var accessibilityIdentifier: String {
+        return "BaseViewController"
+    }
     open override func loadView() {
-            print("\(self.title ?? "") loadView~~~")
-            super.loadView()
-            _ = self.view.autoresizingMask(accessibilityIdentifier)
+        #if DEBUG
+            print("--- \(self.accessibilityIdentifier) loadView")
+        #endif
+        super.loadView()
+        _ = self.view.autoresizingMask(accessibilityIdentifier)
 
-            print("\(self.title ?? "") setupAndComposeView.")
-            setupAndComposeView()
+        #if DEBUG
+            print("... \(self.accessibilityIdentifier) loadView: setupAndComposeView")
+        #endif
+        setupAndComposeView()
 
-            // bootstrap Auto Layout
-            view.setNeedsUpdateConstraints()
-            print("\(self.title ?? "") loadView...")
-        }
+        // bootstrap Auto Layout
+        view.setNeedsUpdateConstraints()
+        #if DEBUG
+            print("^^^ \(self.accessibilityIdentifier) loadView")
+        #endif
+    }
 
+    #if DEBUG
         open override func viewDidLoad() {
-            print("\(self.title ?? "") viewDidLoad~~~")
+            print("--- \(self.accessibilityIdentifier) viewDidLoad")
             super.viewDidLoad()
-            print("\(self.title ?? "") viewDidLoad...")
+            print("^^^ \(self.accessibilityIdentifier) viewDidLoad")
         }
 
         open override func viewWillAppear(_ animated: Bool) {
-            print("\(self.title ?? "") viewWillAppear(\(animated))~~~")
+            print("--- \(self.accessibilityIdentifier) viewWillAppear(\(animated))")
             super.viewWillAppear(animated)
-
-            print("\(self.title ?? "") viewWillAppear(\(animated))...")
+            print("^^^ \(self.accessibilityIdentifier) viewWillAppear(\(animated))")
         }
 
         open override func viewDidAppear(_ animated: Bool) {
-            print("\(self.title ?? "") viewDidAppear(\(animated))~~~")
+            print("--- \(self.accessibilityIdentifier) viewDidAppear(\(animated))")
             super.viewDidAppear(animated)
-
-            print("\(self.title ?? "") viewDidAppear(\(animated))...")
+            print("^^^ \(self.accessibilityIdentifier) viewDidAppear(\(animated))")
         }
 
         open override func viewWillDisappear(_ animated: Bool) {
-            print("\(self.title ?? "") viewWillDisappear(\(animated))~~~")
+            print("--- \(self.accessibilityIdentifier) viewWillDisappear(\(animated))")
             super.viewWillDisappear(animated)
-
-            print("\(self.title ?? "") viewWillDisappear(\(animated))...")
+            print("^^^ \(self.accessibilityIdentifier) viewWillDisappear(\(animated))")
         }
 
         open override func viewDidDisappear(_ animated: Bool) {
-            print("\(self.title ?? "") viewDidDisappear(\(animated))~~~")
+            print("--- \(self.accessibilityIdentifier) viewDidDisappear(\(animated))")
             super.viewDidDisappear(animated)
-
-            print("\(self.title ?? "") viewDidDisappear(\(animated))...")
+            print("^^^ \(self.accessibilityIdentifier) viewDidDisappear(\(animated))")
         }
 
         open override func viewWillLayoutSubviews() {
-            print("\(self.title ?? "") viewWillLayoutSubviews~~~")
+            print("--- \(self.accessibilityIdentifier) viewWillLayoutSubviews")
             super.viewWillLayoutSubviews()
-
-            print("\(self.title ?? "") viewWillLayoutSubviews...")
+            print("^^^ \(self.accessibilityIdentifier) viewWillLayoutSubviews")
         }
 
+
+        open var autoPrintAll: Bool {
+            return false
+        }
+        open var autoPrintViewLayoutTrace: Bool {
+            return false
+        }
+        open var autoPrintSelfViewConstraints: Bool {
+            return false
+        }
+        open var autoPrintSuperViewConstraints: Bool {
+            return false
+        }
         open override func viewDidLayoutSubviews() {
-            print("\(self.title ?? "") viewDidLayoutSubviews~~~")
+            print("--- \(self.accessibilityIdentifier) viewDidLayoutSubviews")
             super.viewDidLayoutSubviews()
 
-            //print(self.view.value(forKey: "_autolayoutTrace"))
-            //self.view.autoPrintConstraints()
-            //print("...")
-            //self.view.superview?.autoPrintConstraints()
-
-            print("\(self.title ?? "") viewDidLayoutSubviews...")
-        }
-
-        open override func updateViewConstraints() {
-            print("\(self.title ?? "") updateViewConstraints~~~")
-            if (!didSetupConstraints) {
-                didSetupConstraints = true
-                print("\(self.title ?? "") setupConstraints.")
-                setupConstraints()
+            if autoPrintAll || autoPrintViewLayoutTrace {
+                print("")
+                print("...... \(self.accessibilityIdentifier) autoPrintViewLayoutTrace ......")
+                print(self.view.value(forKey: "_autolayoutTrace") ?? "")
+                print("")
             }
-            print("\(self.title ?? "") modifyConstraints.")
-            modifyConstraints()
-
-            super.updateViewConstraints()
-            print("\(self.title ?? "") updateViewConstraints...")
-        }
-
-    #else
-        open override func loadView() {
-            super.loadView()
-            _ = self.view.autoresizingMask(accessibilityIdentifier)
-
-            setupAndComposeView()
-
-            // bootstrap Auto Layout
-            view.setNeedsUpdateConstraints()
-        }
-
-        open override func updateViewConstraints() {
-            if (!didSetupConstraints) {
-                didSetupConstraints = true
-                setupConstraints()
+            if autoPrintAll || autoPrintSelfViewConstraints {
+                print("")
+                print("...... \(self.accessibilityIdentifier) autoPrintSelfViewConstraints ......")
+                self.view.autoPrintConstraints()
+                print("")
             }
-            modifyConstraints()
+            if autoPrintAll || autoPrintSuperViewConstraints {
+                print("")
+                print("...... \(self.accessibilityIdentifier) autoPrintSuperViewConstraints ......")
+                self.view.superview?.autoPrintConstraints()
+                print("")
+            }
 
-            super.updateViewConstraints()
+            print("\(self.accessibilityIdentifier) viewDidLayoutSubviews")
         }
     #endif
-    open var accessibilityIdentifier: String {
-        return "VC"
+
+    fileprivate var didSetupConstraints = false
+    open override func updateViewConstraints() {
+        #if DEBUG
+            print("--- \(self.accessibilityIdentifier) updateViewConstraints")
+        #endif
+        if (!didSetupConstraints) {
+            didSetupConstraints = true
+            #if DEBUG
+                print("... \(self.accessibilityIdentifier) updateViewConstraints: setupConstraints.")
+            #endif
+            setupConstraints()
+        }
+        #if DEBUG
+            print("... \(self.accessibilityIdentifier) updateViewConstraints: modifyConstraints.")
+        #endif
+        modifyConstraints()
+
+        super.updateViewConstraints()
+        #if DEBUG
+            print("^^^ \(self.accessibilityIdentifier) updateViewConstraints")
+        #endif
     }
 
     open func setupAndComposeView() {
     }
-
-    fileprivate var didSetupConstraints = false
     open func setupConstraints() {
     }
     open func modifyConstraints() {
